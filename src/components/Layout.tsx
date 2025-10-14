@@ -30,7 +30,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <nav className="container mx-auto px-4 py-4">
                     <div className="flex items-center justify-between">
                         <Link to="/" className="flex items-center space-x-2 focus:outline-none">
-                            <img src="/sln-logo.png" alt="SLN Enterprises Logo" className="w-12 h-12 object-contain" />
+                            <img src="/sln-logo.jpg" alt="SLN Enterprises Logo" className="w-12 h-12 object-contain" />
                             <div>
                                 <h1 className="text-xl font-bold text-gray-800">SLN Enterprises</h1>
                                 <p className="text-xs text-gray-600">Solar Solutions</p>
@@ -103,7 +103,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     <div className="grid md:grid-cols-4 gap-10 mb-8 border-b border-gray-800 pb-8">
                         <div>
                             <div className="flex items-center space-x-2 mb-4">
-                                <img src="/sln-logo.png" alt="SLN Enterprises Logo" className="w-10 h-10 object-contain" />
+                                <img src="/sln-logo.jpg" alt="SLN Enterprises Logo" className="w-10 h-10 object-contain" />
                                 <div>
                                     <h4 className="font-bold text-lg">SLN Enterprises</h4>
                                     <p className="text-sm text-gray-400">Solar Solutions</p>
