@@ -1,6 +1,6 @@
 import { Clock, Mail, MapPin, Menu, Phone, X } from 'lucide-react';
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import RequestDemoModalApp from '../components/RequestDemoModalApp';
 import { MENU_ITEMS, ROUTES } from '../utils/routes';
 
@@ -12,15 +12,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
     const location = useLocation();
-    const navigate = useNavigate();
 
     const menuItems = MENU_ITEMS;
-
-    const handleNavigation = (path: string) => {
-        setMobileMenuOpen(false);
-        navigate(path);
-        window.scrollTo(0, 0);
-    };
 
     return (
         <div className="min-h-screen bg-white font-inter">
@@ -54,12 +47,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                             >
                                 Request Demo
                             </button>
-                            <button
-                                onClick={() => handleNavigation(ROUTES.CONTACT)}
+                            <Link
+                                to={ROUTES.QUOTE}
                                 className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition shadow-md font-semibold"
                             >
                                 Get Free Quote
-                            </button>
+                            </Link>
                         </div>
 
                         <button
@@ -83,12 +76,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                                     {item.name}
                                 </Link>
                             ))}
-                            <button
-                                onClick={() => handleNavigation(ROUTES.CONTACT)}
+                            {/* <Link
+                                to={ROUTES.QUOTE}
+                                onClick={() => setMobileMenuOpen(false)}
                                 className="block w-full text-left bg-green-600 text-white px-4 py-2 rounded-lg mt-2 font-semibold"
                             >
                                 Get Free Quote
-                            </button>
+                            </Link> */}
                         </div>
                     )}
                 </nav>
@@ -136,7 +130,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                             <div className="space-y-3 text-sm text-gray-400">
                                 <p className="flex items-center"><MapPin className="w-4 h-4 mr-3 text-green-500" /> Hyderabad & Kurnool, India</p>
                                 <p className="flex items-center"><Phone className="w-4 h-4 mr-3 text-green-500" /> 77939 37979 / 94942 42942</p>
-                                <p className="flex items-center"><Mail className="w-4 h-4 mr-3 text-green-500" /> contact@slnenterprises.com</p>
+                                <p className="flex items-center"><Mail className="w-4 h-4 mr-3 text-green-500" />slnpowersolutions.com</p>
                             </div>
                         </div>
 
@@ -144,12 +138,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                             <h5 className="font-bold mb-4 border-l-4 border-green-500 pl-3">Service Areas</h5>
                             <p className="text-gray-400 text-sm">Telangana | Andhra Pradesh | Karnataka</p>
                             <p className="text-gray-400 text-sm mt-2">Kurnool • Hyderabad • Bangalore</p>
-                            <Link
-                                to={ROUTES.DEALER}
+                            {/* <Link
+                                to={ROUTES.QUOTE}
                                 className="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition shadow-md font-semibold text-sm inline-block"
                             >
-                                Join Our Dealer Network
-                            </Link>
+                                Get Free Quote
+                            </Link> */}
                         </div>
                     </div>
                     <div className="text-center text-sm text-gray-400">

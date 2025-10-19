@@ -1,6 +1,11 @@
 
+import QuoteButton from './QuoteButton';
 
-export default function HeroSection({ onRequestDemo }) {
+interface HeroSectionProps {
+    onRequestDemo: () => void;
+}
+
+export default function HeroSection({ onRequestDemo }: HeroSectionProps) {
     return (
         <section
             className="relative h-[90vh] flex items-center justify-center bg-gradient-to-br from-yellow-200 via-orange-100 to-pink-200"
@@ -21,12 +26,21 @@ export default function HeroSection({ onRequestDemo }) {
                     <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-orange-500 to-pink-500 px-8 py-6 mb-8 shadow-xl backdrop-blur-md text-center">
                         Harness the Power of the Sun
                     </h1>
-                    <button
-                        className="bg-pink-500 text-white px-8 py-4 rounded-2xl font-bold shadow-xl hover:bg-yellow-400 hover:text-pink-600 transition-all duration-200 text-xl"
-                        onClick={onRequestDemo}
-                    >
-                        Request Demo
-                    </button>
+                    <div className="flex flex-col sm:flex-row gap-4 items-center">
+                        <QuoteButton
+                            variant="primary"
+                            size="lg"
+                            className="text-xl px-8 py-4 rounded-2xl shadow-xl"
+                        >
+                            Get Free Solar Quote
+                        </QuoteButton>
+                        <button
+                            className="bg-pink-500 text-white px-8 py-4 rounded-2xl font-bold shadow-xl hover:bg-yellow-400 hover:text-pink-600 transition-all duration-200 text-xl"
+                            onClick={onRequestDemo}
+                        >
+                            Request Demo
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>

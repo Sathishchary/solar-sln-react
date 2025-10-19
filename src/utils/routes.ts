@@ -7,6 +7,7 @@ export const ROUTES = {
     PROJECTS: '/projects',
     DEALER: '/dealer',
     CONTACT: '/contact',
+    QUOTE: '/quote'
 } as const;
 
 // Menu configuration for navigation
@@ -16,9 +17,10 @@ export const MENU_ITEMS = [
     { name: 'Products', path: ROUTES.PRODUCTS },
     { name: 'Services', path: ROUTES.SERVICES },
     { name: 'Projects', path: ROUTES.PROJECTS },
+    // { name: 'Get Quote', path: ROUTES.QUOTE },
     { name: 'Dealer Opportunity', path: ROUTES.DEALER },
-    { name: 'Contact', path: ROUTES.CONTACT },
-] as const;
+    { name: 'Contact', path: ROUTES.CONTACT }
+];
 
 // Page titles for SEO and metadata
 export const PAGE_TITLES = {

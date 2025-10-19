@@ -8,6 +8,7 @@ import {
   NotFoundPage,
   ProductsPage,
   ProjectsPage,
+  QuotePage,
   ServicesPage
 } from './pages';
 
@@ -22,6 +23,7 @@ export default function SLNSolarWebsite() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/dealer" element={<DealerPage />} />
+          <Route path="/quote" element={<QuotePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
