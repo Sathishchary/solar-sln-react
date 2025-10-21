@@ -1,1 +1,8 @@
-/* /index.html 200
+# Force HTTPS and redirect www to non-www
+https://www.slnpowersolutions.com/*  https://slnpowersolutions.com/:splat  301!
+http://www.slnpowersolutions.com/*   https://slnpowersolutions.com/:splat  301!
+http://slnpowersolutions.com/*       https://slnpowersolutions.com/:splat  301!
+
+# Single-page app fallback (React/Angular routing)
+# This makes sure all routes are handled by index.html
+/*    /index.html   200
