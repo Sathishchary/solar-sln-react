@@ -1,8 +1,8 @@
-import { Clock, Mail, MapPin, Menu, Phone, X } from 'lucide-react';
+import { Calculator, Clock, Mail, MapPin, Menu, Phone, X } from 'lucide-react';
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import RequestDemoModalApp from '../components/RequestDemoModalApp';
-import { MENU_ITEMS, ROUTES } from '../utils/routes';
+import { ROUTES } from '../utils/routes';
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -13,7 +13,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
     const location = useLocation();
 
-    const menuItems = MENU_ITEMS;
+    // Menu items WITHOUT Calculator
+    const menuItems = [
+        { name: 'Home', path: ROUTES.HOME },
+        { name: 'About Us', path: ROUTES.ABOUT },
+        { name: 'Products', path: ROUTES.PRODUCTS },
+        { name: 'Services', path: ROUTES.SERVICES },
+        { name: 'Projects', path: ROUTES.PROJECTS },
+        { name: 'Dealer Opportunity', path: ROUTES.DEALER },
+        { name: 'Contact', path: ROUTES.CONTACT }
+    ];
 
     return (
         <div className="min-h-screen bg-white font-inter">
@@ -41,12 +50,23 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                                     {item.name}
                                 </Link>
                             ))}
+                            
+                            {/* SOLAR CALCULATOR BUTTON - Separate and Highlighted */}
+                            <Link
+                                to={ROUTES.CALCULATOR}
+                                className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-5 py-2.5 rounded-lg hover:from-yellow-500 hover:to-orange-600 transition shadow-md font-bold flex items-center"
+                            >
+                                <Calculator className="w-4 h-4 mr-2" />
+                                Solar Calculator
+                            </Link>
+
                             <button
                                 onClick={() => setIsDemoModalOpen(true)}
                                 className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition shadow-md font-semibold flex items-center"
                             >
                                 Request Demo
                             </button>
+                            
                             <Link
                                 to={ROUTES.QUOTE}
                                 className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition shadow-md font-semibold"
@@ -76,13 +96,34 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                                     {item.name}
                                 </Link>
                             ))}
-                            {/* <Link
+                            
+                            {/* SOLAR CALCULATOR BUTTON - Mobile */}
+                            <Link
+                                to={ROUTES.CALCULATOR}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="block w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-3 rounded-lg font-bold text-center flex items-center justify-center"
+                            >
+                                <Calculator className="w-5 h-5 mr-2" />
+                                Solar Calculator
+                            </Link>
+
+                            <button
+                                onClick={() => {
+                                    setIsDemoModalOpen(true);
+                                    setMobileMenuOpen(false);
+                                }}
+                                className="block w-full bg-blue-600 text-white px-4 py-3 rounded-lg font-semibold text-center"
+                            >
+                                Request Demo
+                            </button>
+                            
+                            <Link
                                 to={ROUTES.QUOTE}
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="block w-full text-left bg-green-600 text-white px-4 py-2 rounded-lg mt-2 font-semibold"
+                                className="block w-full bg-green-600 text-white px-4 py-3 rounded-lg font-semibold text-center"
                             >
                                 Get Free Quote
-                            </Link> */}
+                            </Link>
                         </div>
                     )}
                 </nav>
@@ -122,6 +163,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                                         </Link>
                                     </li>
                                 ))}
+                                <li>
+                                    <Link to={ROUTES.CALCULATOR} className="hover:text-white transition text-yellow-400 font-semibold">
+                                        Solar Calculator
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
 
@@ -138,12 +184,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                             <h5 className="font-bold mb-4 border-l-4 border-green-500 pl-3">Service Areas</h5>
                             <p className="text-gray-400 text-sm">Telangana | Andhra Pradesh | Karnataka</p>
                             <p className="text-gray-400 text-sm mt-2">Kurnool • Hyderabad • Bangalore</p>
-                            {/* <Link
-                                to={ROUTES.QUOTE}
-                                className="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition shadow-md font-semibold text-sm inline-block"
-                            >
-                                Get Free Quote
-                            </Link> */}
                         </div>
                     </div>
                     <div className="text-center text-sm text-gray-400">
