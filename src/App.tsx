@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import {
   AboutPage,
+  CalculatorPage,
   ContactPage,
   DealerPage,
   HomePage,
@@ -22,6 +23,7 @@ export default function SLNSolarWebsite() {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/dealer" element={<DealerPage />} />
           <Route path="/quote" element={<QuotePage />} />
           <Route path="/contact" element={<ContactPage />} />
