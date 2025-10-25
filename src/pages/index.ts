@@ -1,4 +1,5 @@
 export { default as AboutPage } from './AboutPage';
+export { default as CalculatorPage } from './CalculatorPage';
 export { default as ContactPage } from './ContactPage';
 export { default as DealerPage } from './DealerPage';
 export { default as HomePage } from './HomePage';
