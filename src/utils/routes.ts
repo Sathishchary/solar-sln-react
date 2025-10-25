@@ -7,7 +7,8 @@ export const ROUTES = {
     PROJECTS: '/projects',
     DEALER: '/dealer',
     CONTACT: '/contact',
-    QUOTE: '/quote'
+    QUOTE: '/quote',
+    CALCULATOR: '/calculator'
 } as const;
 
 // Menu configuration for navigation
@@ -17,7 +18,6 @@ export const MENU_ITEMS = [
     { name: 'Products', path: ROUTES.PRODUCTS },
     { name: 'Services', path: ROUTES.SERVICES },
     { name: 'Projects', path: ROUTES.PROJECTS },
-    // { name: 'Get Quote', path: ROUTES.QUOTE },
     { name: 'Dealer Opportunity', path: ROUTES.DEALER },
     { name: 'Contact', path: ROUTES.CONTACT }
 ];
@@ -31,6 +31,7 @@ export const PAGE_TITLES = {
     [ROUTES.PROJECTS]: 'Our Projects - SLN Enterprises',
     [ROUTES.DEALER]: 'Dealer Opportunities - SLN Enterprises',
     [ROUTES.CONTACT]: 'Contact Us - SLN Enterprises',
+    [ROUTES.CALCULATOR]: 'Solar Calculator - SLN Enterprises',
 } as const;
 
 export type RouteType = typeof ROUTES[keyof typeof ROUTES];
