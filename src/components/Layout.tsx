@@ -13,7 +13,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
     const location = useLocation();
 
-    // Menu items WITHOUT Calculator
     const menuItems = [
         { name: 'Home', path: ROUTES.HOME },
         { name: 'About Us', path: ROUTES.ABOUT },
