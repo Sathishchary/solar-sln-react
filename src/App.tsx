@@ -23,8 +23,8 @@ export default function SLNSolarWebsite() {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/dealer" element={<DealerPage />} />
+          <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/quote" element={<QuotePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFoundPage />} />
